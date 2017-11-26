@@ -38,6 +38,7 @@
     <ProjectGuid>{4946ECAC-2E69-4BF8-A90A-F5136F5094DF}</ProjectGuid>
     <RootNamespace>_tkinter</RootNamespace>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="python.props" />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

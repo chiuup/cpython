@@ -998,6 +998,7 @@
     <ClCompile Include="..\Objects\odictobject.c">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="..\PC\_findvs.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\PC\python_nt.rc">

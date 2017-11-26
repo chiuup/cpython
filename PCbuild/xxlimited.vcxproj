@@ -38,6 +38,7 @@
     <ProjectGuid>{F749B822-B489-4CA5-A3AD-CE078F5F338A}</ProjectGuid>
     <RootNamespace>xxlimited</RootNamespace>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="python.props" />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

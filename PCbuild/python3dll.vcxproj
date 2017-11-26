@@ -40,6 +40,7 @@
     <Keyword>Win32Proj</Keyword>
     <TargetName>python3</TargetName>
     <SupportPGO>false</SupportPGO>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="python.props" />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -88,7 +89,6 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-  
   <Target Name="BuildPython3_dDef" BeforeTargets="BuildStubDef" Inputs="..\PC\python3.def" Outputs="$(IntDir)python3_d.def" Condition="$(Configuration) == 'Debug'">
     <ItemGroup>
       <_DefLines Remove="@(_DefLines)" />
@@ -111,7 +111,6 @@
     <MakeDir Directories="$(IntDir)" />
     <WriteLinesToFile File="$(IntDir)python3_d.def" Lines="@(_Lines->'%(New)')" Overwrite="true" />
   </Target>
-  
   <Target Name="BuildStubDef" BeforeTargets="PreLinkEvent" Inputs="..\PC\python3.def" Outputs="$(IntDir)python3stub.def">
     <ItemGroup>
       <_DefLines Remove="@(_DefLines)" />

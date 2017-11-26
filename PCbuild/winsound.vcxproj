@@ -38,6 +38,7 @@
     <ProjectGuid>{28B5D777-DDF2-4B6B-B34F-31D938813856}</ProjectGuid>
     <RootNamespace>winsound</RootNamespace>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="python.props" />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
