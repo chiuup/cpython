@@ -7,10 +7,12 @@ set platf=Win32
 set conf=Release
 set dir=%~dp0
 set output=%dir%
+set forced=false
 
 :CheckOpts
 if "%~1"=="-c" (set conf=%2) & shift & shift & goto CheckOpts
 if "%~1"=="-p" (set platf=%2) & shift & shift & goto CheckOpts
+if "%~1"=="-f" (set forced=true) & shift & goto CheckOpts
 
 if "%platf%"=="Win32" (set output=%dir%Win32\) & goto SetConf
 if "%platf%"=="x64" (
@@ -27,7 +29,8 @@ goto Error
 :FindPython
 if not exist %python% (goto Error)
 
-%python% -m compileall -b -qq %dir%..\Lib\ 
+if %forced% equ true (%python% -m compileall -b -f -qq %dir%..\Lib\)
+if %forced% equ false (%python% -m compileall -b -qq %dir%..\Lib\)
 %python% -S -s -E %dir%compile_pyc.py -c %conf% -p %platf%
 %python% -S -s -E %dir%package_epython.py -p %platf% -c %conf%
 

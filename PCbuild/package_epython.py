@@ -94,6 +94,6 @@ def package_epython():
             zfile.write(absname, filename)
 
         zfile.write(os.path.abspath(rt_libs), rt_libs)
-    os.remove(rt_libs)
+
 if __name__ == '__main__':
     package_epython()

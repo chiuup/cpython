@@ -147,8 +147,15 @@ rem Display the current build version information
 %MSBUILD% "%dir%python.props" /t:ShowVersionInfo /v:m /nologo %1 %2 %3 %4 %5 %6 %7 %8 %9
 
 :BuildEmbeddable
+if "%target%"=="Rebuild" (
+    echo on
+    call %dir%package_epython.bat -p %platf% -c %conf% -f
+    @echo off
+    goto :eof
+)
+
 echo on
-CALL %dir%package_epython.bat -p %platf% -c %conf%
+call %dir%package_epython.bat -p %platf% -c %conf%
 @echo off
 
 goto :eof
