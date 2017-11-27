@@ -18,10 +18,13 @@ def compile_pyc():
     else:
         target = 'x86'
 
+    if not os.path.exists('./epython'):
+        os.mkdir('epython')
+
     if args.conf == 'Debug':
-        zfname = 'python36_%s_d.zip' % target
+        zfname = './epython/python36_%s_d.zip' % target
     else:
-        zfname = 'python36_%s.zip' % target
+        zfname = './epython/python36_%s.zip' % target
     src = '../Lib'
     abs_src = os.path.abspath(src)
     excluded = ('__pycache__', 'ensurepip', 'idlelib', 'pydoc_data',

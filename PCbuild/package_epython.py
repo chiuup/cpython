@@ -30,9 +30,9 @@ def package_epython():
         debug = False
     # Packaging dev-lib
     if debug:
-        zfname = 'epython36-dev_%s_d.zip' % arch
+        zfname = './epython/epython36-dev_%s_d.zip' % arch
     else:
-        zfname = 'epython36-dev_%s.zip' % arch
+        zfname = './epython/epython36-dev_%s.zip' % arch
 
     includes = '../Include'
     abs_includes = os.path.abspath(includes)
@@ -72,9 +72,9 @@ def package_epython():
 
     # Packaging runtime
     if debug:
-        zfname = 'epython36_%s_d.zip' % arch
+        zfname = './epython/epython36_%s_d.zip' % arch
     else:
-        zfname = 'epython36_%s.zip' % arch
+        zfname = './epython/epython36_%s.zip' % arch
 
     runtimes_included = ('_asyncio%s.pyd', '_bz2%s.pyd', '_ctypes%s.pyd', '_decimal%s.pyd',
                          '_elementtree%s.pyd', '_hashlib%s.pyd', '_lzma%s.pyd', '_msi%s.pyd',
@@ -85,9 +85,9 @@ def package_epython():
     runtimes_included = [filename % ('_d' if debug else '') for filename in runtimes_included]
 
     if debug:
-        rt_libs = 'python36_%s_d.zip' % arch
+        rt_libs = './epython/python36_%s_d.zip' % arch
     else:
-        rt_libs = 'python36_%s.zip' % arch
+        rt_libs = './epython/python36_%s.zip' % arch
 
     with zipfile.ZipFile(zfname, "w", zipfile.ZIP_DEFLATED) as zfile:
         for filename in runtimes_included:

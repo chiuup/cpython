@@ -7,7 +7,7 @@ import zipfile
 def main():
     """Pack everything
     """
-    with zipfile.ZipFile('epython36.zip', 'w', zipfile.ZIP_DEFLATED) as zfile:
+    with zipfile.ZipFile('./epython/epython36.zip', 'w', zipfile.ZIP_DEFLATED) as zfile:
         pack_include(zfile)
         pack_by_arch_conf(zfile, 'x64', 'Release')
         pack_by_arch_conf(zfile, 'x64', 'Debug')
@@ -72,9 +72,9 @@ def pack_by_arch_conf(zfile, arch, conf):
         zfile.write(absname, arcname)
 
     if debug:
-        rt_libs = 'python36_%s_d.zip' % arch
+        rt_libs = './epython/python36_%s_d.zip' % arch
     else:
-        rt_libs = 'python36_%s.zip' % arch
+        rt_libs = './epython/python36_%s.zip' % arch
 
     zfile.write(os.path.abspath(rt_libs), os.path.join(prefix, rt_libs))
 
