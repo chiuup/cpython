@@ -63,7 +63,8 @@ def package_epython():
                 absname = os.path.abspath(os.path.join(root, filename))
                 arcname = os.path.join('include', absname[len(abs_includes)+1:])
                 zfile.write(absname, arcname)
-
+        zfile.write(os.path.join(os.path.abspath('../PC'), 'pyconfig.h'),
+                    'include/pyconfig.h')
         for filename in filename_included:
             absname = os.path.abspath(os.path.join(libs, filename))
             arcname = os.path.join('libs', absname[len(abs_libs)+1:])

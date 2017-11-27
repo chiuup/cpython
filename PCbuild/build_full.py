@@ -25,6 +25,7 @@ def pack_include(zfile):
             absname = os.path.abspath(os.path.join(root, filename))
             arcname = os.path.join('epython/include', absname[len(abs_includes)+1:])
             zfile.write(absname, arcname)
+    zfile.write(os.path.join(os.path.abspath('../PC'), 'pyconfig.h'), 'epython/include/pyconfig.h')
 
 
 def pack_by_arch_conf(zfile, arch, conf):
