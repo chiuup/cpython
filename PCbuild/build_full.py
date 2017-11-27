@@ -76,7 +76,8 @@ def pack_by_arch_conf(zfile, arch, conf):
     else:
         rt_libs = 'python36_%s.zip' % arch
 
-    zfile.write(os.path.abspath(os.path.join('./epython', rt_libs)), os.path.join(prefix, rt_libs))
+    zfile.write(os.path.abspath(os.path.join('./epython', rt_libs)),
+                os.path.join(prefix, 'python36.zip'))
 
     dlls_included = ('_asyncio%s.pyd', '_bz2%s.pyd', '_ctypes%s.pyd', '_decimal%s.pyd',
                      '_elementtree%s.pyd', '_hashlib%s.pyd', '_lzma%s.pyd', '_msi%s.pyd',
