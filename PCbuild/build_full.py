@@ -72,11 +72,11 @@ def pack_by_arch_conf(zfile, arch, conf):
         zfile.write(absname, arcname)
 
     if debug:
-        rt_libs = './epython/python36_%s_d.zip' % arch
+        rt_libs = 'python36_%s_d.zip' % arch
     else:
-        rt_libs = './epython/python36_%s.zip' % arch
+        rt_libs = 'python36_%s.zip' % arch
 
-    zfile.write(os.path.abspath(rt_libs), os.path.join(prefix, rt_libs))
+    zfile.write(os.path.abspath(os.path.join('./epython', rt_libs)), os.path.join(prefix, rt_libs))
 
     dlls_included = ('_asyncio%s.pyd', '_bz2%s.pyd', '_ctypes%s.pyd', '_decimal%s.pyd',
                      '_elementtree%s.pyd', '_hashlib%s.pyd', '_lzma%s.pyd', '_msi%s.pyd',
